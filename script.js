@@ -45,5 +45,11 @@ function checkValidInput(numberOfSquares) {
         numberOfSquares = prompt("It should be a number between 1-100")
         isNumber = Number.parseInt(numberOfSquares)
     }
+
+    while (!(isNumber >= 1 && isNumber <= 100)) {
+        numberOfSquares = prompt("It should be a number between 1-100")
+        isNumber = Number.parseInt(numberOfSquares)
+    }
+
     return isNumber
 }
