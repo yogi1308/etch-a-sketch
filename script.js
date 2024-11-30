@@ -21,7 +21,7 @@ function createGrid(numberOfSquares = 16) {
 }
 
 function handleMouseEnter(event, numberOfSquares) {
-    event.target.setAttribute("style", `background: black; height: calc(500px/${numberOfSquares}); width: calc(500px/${numberOfSquares})`)
+    event.target.setAttribute("style", `background: rgba(${randomValue()}, ${randomValue()}, ${randomValue()}, 1); height: calc(500px/${numberOfSquares}); width: calc(500px/${numberOfSquares})`)
 }
 
 function handlebuttonClick(event) {
@@ -52,4 +52,8 @@ function checkValidInput(numberOfSquares) {
     }
 
     return isNumber
+}
+
+function randomValue() {
+    return (Math.random()) * 255
 }
