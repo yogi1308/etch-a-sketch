@@ -11,8 +11,6 @@
     border: 1px solid black;
     margin: 0px;
     box-sizing: border-box;
-    width: calc(500px/16);
-    height: calc(500px/16);
 }
 
 button {

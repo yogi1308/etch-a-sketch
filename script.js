@@ -12,16 +12,16 @@ function createGrid(numberOfSquares = 16) {
         for (let j = 0; j < numberOfSquares; ++j) {
             const square = document.createElement("div")
             square.classList.add("square")
-            square.addEventListener("mouseenter", handleMouseEnter)
+            square.setAttribute("style", `height: calc(500px/${numberOfSquares}); width: calc(500px/${numberOfSquares})`)
+            square.addEventListener("mouseenter", (event) => handleMouseEnter(event, numberOfSquares))
             row.appendChild(square)
         }
         container.appendChild(row)
     }
 }
 
-
-function handleMouseEnter(event) {
-    event.target.setAttribute("style", "background: black")
+function handleMouseEnter(event, numberOfSquares) {
+    event.target.setAttribute("style", `background: black; height: calc(500px/${numberOfSquares}); width: calc(500px/${numberOfSquares})`)
 }
 
 function handlebuttonClick(event) {
