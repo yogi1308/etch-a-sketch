@@ -14,3 +14,7 @@
     width: calc(500px/16);
     height: calc(500px/16);
 }
+
+button {
+    margin-bottom: 10px;
+}

@@ -13,7 +13,14 @@ for (let i = 0; i < 16; ++i) { // creates the square grid
     }
     container.appendChild(row)
 }
+const button = document.querySelector("button")
+button.addEventListener("click", handlebuttonClick)
+
 
 function handleMouseEnter(event) {
     event.target.setAttribute("style", "background: black")
+}
+
+function handlebuttonClick(event) {
+    numberOfSquares = prompt("Number of squares per side?")
 }
