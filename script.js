@@ -21,7 +21,11 @@ function createGrid(numberOfSquares = 16) {
 }
 
 function handleMouseEnter(event, numberOfSquares) {
-    event.target.setAttribute("style", `background: rgba(${randomValue()}, ${randomValue()}, ${randomValue()}, 1); height: calc(500px/${numberOfSquares}); width: calc(500px/${numberOfSquares})`)
+    let opacity = Number.parseFloat(event.target.style.opacity) || 0
+    console.log(opacity)
+    if (opacity < 1){opacity = opacity + 0.1}
+    else {opacity = 1}
+    event.target.setAttribute("style", `background: rgb(${randomValue()}, ${randomValue()}, ${randomValue()}); opacity: ${opacity}; height: calc(500px/${numberOfSquares}); width: calc(500px/${numberOfSquares})`)
 }
 
 function handlebuttonClick(event) {
