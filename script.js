@@ -25,7 +25,9 @@ function handleMouseEnter(event, numberOfSquares) {
 }
 
 function handlebuttonClick(event) {
-    numberOfSquares = prompt("Number of squares per side?")
+    numberOfSquares = prompt("Number of squares per side? (1-100)")
+    isNumber = Number.parseInt(numberOfSquares)
+    numberOfSquares = checkValidInput(numberOfSquares)
     removeGrid()
     createGrid(numberOfSquares)
 }
@@ -35,4 +37,13 @@ function removeGrid() {
     while (container.firstChild) {
         container.removeChild(container.firstChild)
     }
+}
+
+function checkValidInput(numberOfSquares) {
+    isNumber = Number.parseInt(numberOfSquares)
+    while (Number.isNaN(isNumber)) {
+        numberOfSquares = prompt("It should be a number between 1-100")
+        isNumber = Number.parseInt(numberOfSquares)
+    }
+    return isNumber
 }
